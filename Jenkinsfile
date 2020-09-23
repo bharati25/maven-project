@@ -4,7 +4,7 @@ pipeline {
 
     stages {
         stage('SCM Checkout'){
-          git 'https://github.com/prakashk0301/maven-project'
+          git 'https://github.com/bpatil25/maven-project'
         }
   }
     {
@@ -36,7 +36,7 @@ pipeline {
         }
         stage ('deploy to dev') {
              steps {
-                  sshagent(['e7281f30-7d21-4723-9d5d-d355081267d8']) {
+                  sshagent(['db1a4e4d-2ffc-4d7c-9c6e-a6e014e6237a']) {
                   sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.39.173:/var/lib/tomcat/webapps'
 } } }
 
